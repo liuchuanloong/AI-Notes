@@ -10,11 +10,11 @@ BN的基本思想其实相当直观：因为深层神经网络在做非线性变
 
 上文说过经过这个变换后某个神经元的激活x形成了均值为0，方差为1的正态分布，目的是把值往后续要进行的非线性变换的线性区拉动，增大导数值，增强反向传播信息流动性，加快训练收敛速度。但是这样会导致网络表达能力下降，为了防止这一点，每个神经元增加两个调节参数（scale和shift），这两个参数是通过训练来学习到的，用来对变换后的激活反变换，使得网络表达能力增强，即对变换后的激活进行如下的scale和shift操作，对比BN的过程会发现这其实是变换的反操作：
 
-![image5](208CE9AE59304127BB53E39B34CE96B4)
+![image5](https://github.com/liuchuanloong/AI-Notes/blob/master/picture/pic20191024/pic20191024005.png)
 
 BN其具体操作流程
 
-![image6](0417F0B1CA6F4FAAB49EAEC8C65CB412)
+![image6](https://github.com/liuchuanloong/AI-Notes/blob/master/picture/pic20191024/pic20191024006.png)
 
 ##### BN的优点
 
@@ -109,7 +109,7 @@ param:bn_param   : batchnorm所需要的一些参数
 
 BN全名是Batch Normalization，见名知意，其是一种归一化方式，而且是以batch的维度做归一化，那么问题就来了，此归一化方式对batch是independent的，过小的batch size会导致其性能下降，一般来说每GPU上batch设为32最合适，但是对于一些其他深度学习任务batch size往往只有1-2，比如目标检测，图像分割，视频分类上，输入的图像数据很大，较大的batchsize显存吃不消。那么，对于较小的batch size，其performance是什么样的呢？如下图：
 
-![image7](7572671B68124A1BB8BE42F369812649)
+![image7](https://github.com/liuchuanloong/AI-Notes/blob/master/picture/pic20191024/pic20191024007.png)
 
 另外，Batch Normalization是在batch这个维度上Normalization，但是这个维度并不是固定不变的，比如训练和测试时一般不一样，一般都是训练的时候在训练集上通过滑动平均预先计算好平均-mean，和方差-variance参数，在测试的时候，不在计算这些值，而是直接调用这些预计算好的来用，但是，当训练数据和测试数据分布有差别是时，训练机上预计算好的数据并不能代表测试数据，这就导致在训练，验证，测试这三个阶段存在inconsistency。
 
@@ -130,7 +130,7 @@ BN全名是Batch Normalization，见名知意，其是一种归一化方式，�
 - GroupNorm将channel分组，然后再做归一化；
 - SwitchableNorm是将BN、LN、IN结合，赋予权重，让网络自己去学习归一化层应该使用什么方法
 
-![image8](7E7039450D00457FAAB3386F35D4F695)
+![image8](https://github.com/liuchuanloong/AI-Notes/blob/master/picture/pic20191024/pic20191024008.png)
 BatchNorm（NWH）假设batchsize为32，某一层的输出是64个通道，则是对32个batch的第一个通道的特征图进行归一化
 
 LayerNorm（CWH）仅对某一个batch上的所有通道归一化

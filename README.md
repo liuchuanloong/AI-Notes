@@ -7,3 +7,7 @@
 - [一文详解常用的激活函数](https://github.com/liuchuanloong/AI-Notes/blob/master/DeepLearningNotes/一文详解常用的激活函数.md)
 
 - [评价标准专题](https://github.com/liuchuanloong/AI-Notes/blob/master/DeepLearningNotes/%E8%AF%84%E4%BB%B7%E6%A0%87%E5%87%86%E4%B8%93%E9%A2%98.md)
+
+- [标准化的好处及常见处理方法](https://github.com/liuchuanloong/AI-Notes/blob/master/DeepLearningNotes/%E6%A0%87%E5%87%86%E5%8C%96%E7%9A%84%E5%A5%BD%E5%A4%84%E5%8F%8A%E5%B8%B8%E8%A7%81%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95.md)
+
+- [BatchNorm的原理及代码实现](https://github.com/liuchuanloong/AI-Notes/blob/master/DeepLearningNotes/BatchNorm%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0.md)
